@@ -38,18 +38,18 @@ function render(data){
 
 
     // set the ranges
-    var x = d3.scaleBand()
-        .range([0, width])
-        .domain(d3.map(data, function(d){ return d.start_station_id}))
+    // var x = d3.scaleBand()
+    //     .range([0, width])
+    //     .domain(d3.map(data, function(d){ return d.start_station_id}))
     
-    console.log("x domain", d3.map(data, function(d){ return d.start_station_id}))
+    // console.log("x domain", d3.map(data, function(d){ return d.start_station_id}))
 
 
-    var y = d3.scaleLinear()
-        .range([height, 0])
-        .domain(d3.extent(data, function(d) { return d.duration; }) );
+    // var y = d3.scaleLinear()
+    //     .range([height, 0])
+    //     .domain(d3.extent(data, function(d) { return d.duration; }) );
 
-        console.log("y domain", d3.extent(data, function(d) { return d.duration; }))
+    // console.log("y domain", d3.extent(data, function(d) { return d.duration; }))
 
     let plot = d3.select(".plot").append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top})`)
@@ -66,5 +66,10 @@ function render(data){
         .attr("fill", "red")
 
     console.log("render")
+
+      // Add the Y Axis
+//   plot.append("g")
+//     .attr("class", "axis")
+//     .call(d3.axisLeft(y));
 
 }
