@@ -36,11 +36,7 @@ const data = [
         radius: 12
     }
 ]
-console.log(data)
-let xScale;
-let yScale;
-let rScale;
-let colorScale;
+
 
 let plot = d3.select(".plot");
 
