@@ -30,7 +30,7 @@ const data = [
         radius: 20
     },
     {
-        x:16,
+        x:26,
         y:17,
         category: "Lizards",
         radius: 12
@@ -41,10 +41,11 @@ const data = [
 let plot = d3.select(".plot");
 
 let circles = plot.selectAll("circle")
-    .data(data)
-    .enter()
+    .data(data) // object
+    .enter() // 4 circles
     .append("circle")
-    .attr("cx", 100)
+    .attr("cx", function(hello){ return hello.x })
     .attr("cy", 100)
     .attr("r", 12)
     .attr("fill", "red")
+    .attr("stroke", "black")
